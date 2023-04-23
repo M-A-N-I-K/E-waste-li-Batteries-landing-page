@@ -5,6 +5,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 const Home = lazy(() => import("./Components/Home"));
 const Schedule = lazy(() => import("./Components/Schedule"));
 const Header = lazy(() => import("./Components/header"));
+const CTA = lazy(() => import("./Components/CTA"));
+const Testimonials = lazy(() => import("./Components/Testimonials"));
+const Footer = lazy(() => import("./Components/footer"));
 
 function App() {
 	return (
@@ -21,6 +24,15 @@ function App() {
 				<Routes>
 					<Route path="LiBatteries" element={<Schedule />} />
 				</Routes>
+			</Suspense>
+			<Suspense fallback={<div>Loading...</div>}>
+				<Testimonials />
+			</Suspense>
+			<Suspense fallback={<div>Loading...</div>}>
+				<CTA />
+			</Suspense>
+			<Suspense fallback={<div>Loading...</div>}>
+				<Footer />
 			</Suspense>
 		</BrowserRouter>
 	);

@@ -4,16 +4,22 @@ export default function NavBar() {
 	const [navbar, setNavbar] = useState(false);
 
 	return (
-		<nav className="w-full sticky top-0 z-50 bg-blue-950 shadow opacity-90">
+		<nav
+			className={`w-full sticky top-0 z-50 bg-blue-950 shadow opacity-90 ${
+				navbar ? "h-[40vh]" : "h-[10vh]"
+			}`}
+		>
 			<div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
 				<div>
 					<div className="flex items-center justify-between py-3 md:py-5 md:block">
 						<a href="#">
-							<h2 className="text-2xl font-bold text-white">E-Waste</h2>
+							<h2 className="text-2xl font-bold text-yellow-300">
+								Call2Recycle
+							</h2>
 						</a>
 						<div className="md:hidden">
 							<button
-								className="p-2 text-white rounded-md outline-none focus:border-gray-400 focus:border"
+								className="p-2 text-yellow-300 rounded-md outline-none focus:border-gray-400 focus:border"
 								onClick={() => setNavbar(!navbar)}
 							>
 								{navbar ? (
@@ -56,16 +62,16 @@ export default function NavBar() {
 						}`}
 					>
 						<ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-							<li className="text-white font-semibold hover:text-blue-600">
+							<li className="text-yellow-300 font-semibold hover:text-blue-600">
 								<Link to="/">Home</Link>
 							</li>
-							<li className="text-white font-semibold hover:text-blue-600">
+							<li className="text-yellow-300 font-semibold hover:text-blue-600">
 								<Link to="/">E-Waste</Link>
 							</li>
-							<li className="text-white font-semibold hover:text-blue-600">
+							<li className="text-yellow-300 font-semibold hover:text-blue-600">
 								<Link to="LiBatteries">Li-Batteries</Link>
 							</li>
-							<li className="text-white font-semibold hover:text-blue-600">
+							<li className="text-yellow-300 font-semibold hover:text-blue-600">
 								<Link to="/">About US</Link>
 							</li>
 						</ul>
